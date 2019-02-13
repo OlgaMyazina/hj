@@ -30,11 +30,11 @@ function onLoadContent(e) {
   )
   xhr.send();
 }
+
 function onLoadXHR() {
-  if (this.status === 200){
+  if (this.status === 200) {
     contentBox.innerHTML = this.responseText;
-  }
-  else {
+  } else {
     console.log(`Ошибка протокола ${this.status}`);
   }
 }

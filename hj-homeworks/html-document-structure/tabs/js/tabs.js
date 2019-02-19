@@ -16,18 +16,26 @@ Array.from(tabsContent.children).forEach(content => {
 
 tabsNav.removeChild(demo);
 tabsNav.firstElementChild.classList.add('ui-tabs-active');
+showArticle(tabsNav.firstElementChild);
+
 tabsNav.addEventListener('click', activeTab);
 
 function activeTab(event) {
-  Array.from(event.target.parentElement.parentElement.children).forEach(tab => {
+  const tabClick = event.target.parentElement;
+  Array.from(tabClick.parentElement.children).forEach(tab => {
     tab.classList.remove('ui-tabs-active');
   })
-  event.target.parentElement.classList.add('ui-tabs-active');
+  tabClick.classList.add('ui-tabs-active');
+  showArticle(event.target);
 
+}
+
+function showArticle(tab) {
   Array.from(tabsContent.children).forEach(content => {
     content.classList.add('hidden');
-    if (content.dataset.tabTitle === event.target.textContent) {
+    if (content.dataset.tabTitle === tab.textContent) {
       content.classList.remove('hidden');
     }
   });
 }
+

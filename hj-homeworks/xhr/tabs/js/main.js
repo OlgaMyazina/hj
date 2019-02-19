@@ -2,10 +2,11 @@
 
 document.addEventListener('DOMContentLoaded', onLoad);
 
-let contentBox;
+let contentBox, preloader;
 
 function onLoad() {
   contentBox = document.getElementById('content');
+  preloader = document.querySelector('#preloader');
   //Возможно, лучше воспользоваться всплытием события, чтобы навесить один обработчик
   const links = Array.from(document.querySelectorAll('a'));
   links.forEach((a) => {
@@ -20,6 +21,7 @@ function onLoadContent(e) {
     e.preventDefault();
     changeActive(e.currentTarget);
   }
+  preloader.classList.remove('hidden')
   const xhr = new XMLHttpRequest();
   xhr.addEventListener('load', onLoadXHR);
   xhr.addEventListener('error', onErrorXHR);
@@ -32,6 +34,7 @@ function onLoadContent(e) {
 }
 
 function onLoadXHR() {
+  preloader.classList.add('hidden');
   if (this.status === 200) {
     contentBox.innerHTML = this.responseText;
   } else {
@@ -41,6 +44,7 @@ function onLoadXHR() {
 
 function onErrorXHR() {
   console.log('Ошибка сети');
+  preloader.classList.add('hidden');
 }
 
 function changeActive(activeElement) {

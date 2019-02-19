@@ -36,10 +36,9 @@ controls.addEventListener('click', event=>{
 updateControls();
 
 function updateControls(){
-  next.classList.remove('disabled');
-  prev.classList.remove('disabled');
-  first.classList.remove('disabled');
-  last.classList.remove('disabled');
+  Array.from(controls.children).forEach(button=>{
+    button.classList.remove('disabled');
+  });
   if (!currentSlide.nextElementSibling){
     next.classList.add('disabled');
     last.classList.add('disabled');

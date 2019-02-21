@@ -32,3 +32,21 @@ Array
 Array
   .from(document.querySelectorAll('a'))
   .forEach(initLink);
+
+/**
+ * Решение: при клике на пункт меню второго уровня (серый фон)
+ переход по ссылке не осуществлялся, меню не схлопывалось и оставалось раскрытым.
+ */
+
+Array
+  .from(document.querySelectorAll('.dropdown-menu'))
+  .forEach(clickNode);
+
+function clickNode(node){
+  node.addEventListener('click', clickLink);
+}
+
+function clickLink(event){
+  event.stopPropagation();
+  event.preventDefault();
+}

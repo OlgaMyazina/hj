@@ -13,7 +13,7 @@ function showUser(user) {
 }
 
 function loadData(url) {
-  return new Promise((done) => {
+  return new Promise((done, fail) => {
     window.loadData = done;
     const script = document.createElement('script');
     script.src = `${url}?jsonp=loadData`;

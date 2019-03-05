@@ -10,3 +10,8 @@
 1. Шарики: https://olgamyazina.github.io/hj/hj-homeworks/websocket/bubbles/
 2. Счетчик: https://olgamyazina.github.io/hj/hj-homeworks/websocket/counter/
 3. Чат: https://olgamyazina.github.io/hj/hj-homeworks/websocket/chat/
+
+3.5. CORS:
+1. Твиттер-виджет: https://olgamyazina.github.io/hj/hj-homeworks/cors/twitter/
+2. Профиль пользователя: https://olgamyazina.github.io/hj/hj-homeworks/cors/profile/
+3. Рецепты: https://olgamyazina.github.io/hj/hj-homeworks/cors/food/

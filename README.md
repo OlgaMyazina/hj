@@ -22,6 +22,6 @@
 3. Анимированный фон: https://olgamyazina.github.io/hj/hj-homeworks/canvas/background/
 
 4.3. Создание HTML с нуля:
-1. Испорченные комментарии
-2. Схема мест в самолёте
-3. Страница интернет-магазина
+1. Испорченные комментарии: https://olgamyazina.github.io/hj/hj-homeworks/dom-from-zero/comments/
+2. Схема мест в самолёте: https://olgamyazina.github.io/hj/hj-homeworks/dom-from-zero/plane/
+3. Страница интернет-магазина: https://olgamyazina.github.io/hj/hj-homeworks/dom-from-zero/store/

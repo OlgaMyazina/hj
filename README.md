@@ -20,3 +20,8 @@
 1. Генератор звёздного неба: https://olgamyazina.github.io/hj/hj-homeworks/canvas/star-field/
 2. Рисование в браузере: https://olgamyazina.github.io/hj/hj-homeworks/canvas/draw/
 3. Анимированный фон: https://olgamyazina.github.io/hj/hj-homeworks/canvas/background/
+
+4.3. Создание HTML с нуля:
+1. Испорченные комментарии
+2. Схема мест в самолёте
+3. Страница интернет-магазина

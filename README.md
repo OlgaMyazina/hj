@@ -25,3 +25,8 @@
 1. Испорченные комментарии: https://olgamyazina.github.io/hj/hj-homeworks/dom-from-zero/comments/
 2. Схема мест в самолёте: https://olgamyazina.github.io/hj/hj-homeworks/dom-from-zero/plane/
 3. Страница интернет-магазина: https://olgamyazina.github.io/hj/hj-homeworks/dom-from-zero/store/
+
+4.4. Продвинутая работа с веб-сокетами:
+1. Посетители сайта в реальном времени: https://olgamyazina.github.io/hj/hj-homeworks/comet/realtime/ 
+2. Коллективное рисование: https://olgamyazina.github.io/hj/hj-homeworks/comet/draw/
+3. Генератор случайных чисел: https://olgamyazina.github.io/hj/hj-homeworks/comet/random/

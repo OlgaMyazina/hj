@@ -14,15 +14,16 @@ const realtime = new Chart(ctx).Bar({
 let isFirst = true;
 const ws = new WebSocket('wss://neto-api.herokuapp.com/realtime');
 ws.addEventListener('message', event => {
+  const dataWS = JSON.parse(event.data);
+
   if (isFirst) {
-    event.data
-      .split('\n')
-      .map(line => line.split('|'))
-      .forEach(data => realtime.addData([Number(data[1])], data[0]));
+    //при получении первого сообщения записываем в гистрограмму значения в обратном порядке (для соблюдения хронологии)
+    dataWS.reverse()
+    .forEach(data =>  realtime.addData([Number(data.online)], data.time));
 
     isFirst = false;
   } else {
-    const [label, data] = event.data.split('|');
+    const [label, data] = [dataWS.time, dataWS.online];
     realtime.removeData();
     realtime.addData([Number(data)], label);
   }

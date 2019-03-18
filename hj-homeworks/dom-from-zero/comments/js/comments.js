@@ -11,45 +11,68 @@ function showComments(list) {
 }
 
 function showCommentsTemplate(comment) {
+  //обертка всего комментария
   const element = document.createElement('div');
   element.className = 'comment-wrap';
+
+  //аватар-обертка
   const photo = document.createElement('div');
   photo.className = 'photo';
   photo.title = `${comment.author.name}`;
+
+  //аватар
   const avatar = document.createElement('div');
   avatar.className = 'avatar';
   avatar.style.backgroundImage = `url(${comment.author.pic})`;
+  //добавили аватар в аватар-обертку
+  photo.appendChild(avatar);
+  //добавили в обертку всего блока комментария всю обертку аватара
+  element.appendChild(photo);
+
+  //обертка блока комментария
   const commentBlock = document.createElement('div');
   commentBlock.className = 'comment-block';
+  //добавили обертку в всего комментария
+  element.appendChild(commentBlock);
+
+  //текст комментария
   const commentText = document.createElement('p');
   commentText.className = 'comment-text';
+
   const commentTextArray = comment.text.split('\n');
   commentTextArray.forEach(text => {
     const textNode = document.createTextNode(text);
     commentText.appendChild(textNode);
     commentText.appendChild(document.createElement('br'));
   });
+  commentBlock.appendChild(commentText);
+
+  //подвал комментария
   const bottomComment = document.createElement('div');
   bottomComment.className = 'bottom-comment';
+  commentBlock.appendChild(bottomComment);
+
+  //дата комментария
   const commentDate = document.createElement('div');
   commentDate.textContent = `${new Date(comment.date).toLocaleString('ru-Ru')}`;
+  bottomComment.appendChild(commentDate);
+
+  //опции для комментария
   const commentActions = document.createElement('ul');
   commentActions.className = 'comment-actions';
+  bottomComment.appendChild(commentActions);
+
+  //кнопка пожаловаться
   const complain = document.createElement('li');
   complain.className = 'complain';
   complain.textContent = `Пожаловаться`;
+  commentActions.appendChild(complain);
+
+
+  //кнопка ответить
   const reply = document.createElement('li');
   reply.className = 'reply';
   reply.textContent = `Ответить`;
-
-  element.appendChild(photo);
-  photo.appendChild(avatar);
-  element.appendChild(commentBlock);
-  commentBlock.appendChild(commentText);
-  commentBlock.appendChild(bottomComment);
-  bottomComment.appendChild(commentDate);
-  bottomComment.appendChild(commentActions);
-  commentActions.appendChild(complain);
   commentActions.appendChild(reply);
 
   return element;

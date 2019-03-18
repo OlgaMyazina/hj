@@ -40,8 +40,11 @@ function showSeatMap(list) {
     return f;
   }, document.createDocumentFragment());
 
+  clearSeats();
+
   clear(seatMapDiv);
   seatMapDiv.appendChild(fragment);
+
 
   const seats = document.querySelectorAll('div.seat');
   Array.from(seats).forEach(seat => {
@@ -118,11 +121,15 @@ btnSetFull.addEventListener('click', (event) => {
 btnSetEmpty.addEventListener('click', event => {
   event.preventDefault();
 
+  clearSeats();
+});
+
+function clearSeats(){
   const seats = document.querySelectorAll('div.seat');
   Array.from(seats).forEach(seat => {
     toRefund(seat);
   });
-});
+}
 
 const totalPax = document.getElementById('totalPax'),
   totalAdult = document.getElementById('totalAdult'),
